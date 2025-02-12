@@ -1,0 +1,48 @@
+
+.puzzleContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    margin: auto;
+}
+
+.puzzleTile {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.puzzleTile.empty {
+    background: white;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    height: 65vh;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.winMessage {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 2em;
+    color: green;
+}
+
+.button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+}

@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.audioPlayer {
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.audioPlayer::-webkit-media-controls-panel {
+    background-color: #ececec; 
+    border-radius: 8px;
+}
+
+.audioPlayer::-webkit-media-controls-play-button {
+    filter: invert(1); 
+}
+
+
+.audioPlayer::-webkit-media-controls-timeline {
+    border-radius: 5px;
+}
