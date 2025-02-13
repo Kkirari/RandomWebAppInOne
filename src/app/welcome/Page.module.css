@@ -1,0 +1,51 @@
+/* Page.module.css */
+.container {
+    text-align: center;
+    background: white;
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+  
+    /* เพิ่ม Flexbox เพื่อจัดให้อยู่ตรงกลาง */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ทำให้เต็มความสูงของหน้าจอ */
+    margin: 0 auto; /* จัดให้อยู่ตรงกลางแนวนอน */
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+  }
+  
+  .message {
+    font-size: 1.5rem;
+    color: #555;
+    animation: slideIn 1.2s ease-out;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

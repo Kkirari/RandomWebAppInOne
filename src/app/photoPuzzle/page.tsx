@@ -14,26 +14,25 @@ const imgOrder = [
     "image_part_007", "image_part_008", "image_part_009"
 ];
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const shuffle = (array: number[]) => {
-    const fixedBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // ลำดับที่ถูกต้องของกระดาน 3x3
-    [fixedBoard[7], fixedBoard[8]] = [fixedBoard[8], fixedBoard[7]]; // เปลี่ยนตำแหน่ง 8 กับ 7
-    return fixedBoard;
-};
 // const shuffle = (array: number[]) => {
-//     let currentIndex = array.length, temporaryValue, randomIndex;
+//     const fixedBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // ลำดับที่ถูกต้องของกระดาน 3x3
+//     [fixedBoard[7], fixedBoard[8]] = [fixedBoard[8], fixedBoard[7]]; // เปลี่ยนตำแหน่ง 8 กับ 7
+//     return fixedBoard;
+// };
+const shuffle = (array: number[]) => {
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
-//     while (0 !== currentIndex) {
-//         randomIndex = Math.floor(Math.random() * currentIndex);
-//         currentIndex -= 1;
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
 
-//         temporaryValue = array[currentIndex];
-//         array[currentIndex] = array[randomIndex];
-//         array[randomIndex] = temporaryValue;
-//     }
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
 
-//     return array;
-// }
+    return array;
+}
 
 
 const SlidingPuzzle = () => {
@@ -89,17 +88,20 @@ const SlidingPuzzle = () => {
     )), [tiles, handleClick]);
 
     return (
-
-        <div className={styles.wrapper}>
-            <Card className={styles.wrapper}>
-                <div className={styles.puzzleContainer}>
-                    {puzzleTiles}
-                </div>
-            </Card>
-            {won && <h1 className={styles.winMessage}>WOW You so great!!!!</h1>}
-            {won && <Button onClick={() => window.location.href = "/song"} className={styles.button} variant="outline">Next level</Button>}
-            <Button className={styles.button} variant="outline" onClick={resetGame}>Reset Game</Button>
+        <div className={styles.container}>
+            <div className={styles.wrapper}>
+                <h1 className={styles.winMessage}>Let try this! 🧠🤯</h1>
+                <Card className={styles.wrapper}>
+                    <div className={styles.puzzleContainer}>
+                        {puzzleTiles}
+                    </div>
+                </Card>
+                {won && <h1 className={styles.winMessage}>WOW You so great!!!!</h1>}
+                {won && <Button onClick={() => window.location.href = "/song"} className={styles.button} variant="outline">Next level</Button>}
+                <Button className={styles.button} variant="outline" onClick={resetGame}>Reset Game</Button>
+            </div>
         </div>
+
 
     );
 };

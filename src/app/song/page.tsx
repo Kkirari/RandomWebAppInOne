@@ -8,7 +8,6 @@ import {
     CardTitle,
     CardFooter,
 } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
 import {
     Select,
     SelectContent,
@@ -37,21 +36,27 @@ export default function CardWithForm() {
         <div className={styles.container}>
             <Card className="w-[350px]">
                 <CardHeader>
-                    <CardTitle>Rest and Relax</CardTitle>
+                    <CardTitle>Rest and Relax🎶🎼</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <form>
                         <div className="grid w-full items-center gap-4">
                             <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="music">Select Music</Label>
                                 <Select onValueChange={handleMusicChange}>
+                                    <div>
+                                        <img src="/photo/cute.jpg" />
+                                    </div>
+
+
                                     <SelectTrigger id="music">
                                         <SelectValue placeholder="Select a music" />
                                     </SelectTrigger>
                                     <SelectContent position="popper">
-                                        <SelectItem value="/music/Die_With_A_Smile.mp3">Music 1</SelectItem>
-                                        <SelectItem value="/music/music2.mp3">Music 2</SelectItem>
-                                        <SelectItem value="/music/music3.mp3">Music 3</SelectItem>
+                                        <SelectItem value="/music/14CM..mp3">14 CM</SelectItem>
+                                        <SelectItem value="/music/NoOne.mp3">วันที่นาฬิกาของเราหมุนไปพร้อมกัน</SelectItem>
+                                        <SelectItem value="/music/Sunsets_With_You.mp3">Sunsets With You</SelectItem>
+                                        <SelectItem value="/music/ClariS.mp3">Hitorigoto </SelectItem>
+
                                     </SelectContent>
                                 </Select>
                             </div>
@@ -63,6 +68,17 @@ export default function CardWithForm() {
                 </CardContent>
                 <CardFooter className="flex justify-between">
                     <Button variant="outline" onClick={playMusic}>Play</Button>
+                    <Button
+                        style={{
+                            backgroundColor: 'blue',
+                            color: 'white',
+                            borderColor: 'blue',
+                        }}
+                        variant="outline"
+                        onClick={() => window.location.href = "/end"}
+                    >
+                        Next station!
+                    </Button>
                 </CardFooter>
             </Card>
         </div>

@@ -1,4 +1,19 @@
-
+.container{
+    text-align: center;
+    background: white;
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+  
+    /* เพิ่ม Flexbox เพื่อจัดให้อยู่ตรงกลาง */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ทำให้เต็มความสูงของหน้าจอ */
+    margin: 0 auto; /* จัดให้อยู่ตรงกลางแนวนอน */
+}
 .puzzleContainer {
     display: grid;
     grid-template-columns: repeat(3, 100px);
